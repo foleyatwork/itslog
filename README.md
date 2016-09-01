@@ -1,6 +1,8 @@
 # It's Log
 ## It's better than bad, it's good!
 
+![log][http://i.imgur.com/ezo7hSR.jpg]
+
 I work in environments with heaps of console spam, making it annoying
 to find my own logs in the haystack. This package lets you prefix all
 your logs with a stylish identifying string without changing the
@@ -27,7 +29,7 @@ ES6-Style:
 
 CommonJS Style:
 
-    const itslog = require('ItsLog');
+    const itslog = require('itslog');
 
 For browser people with no build system, this package creates a global
 variable called ItsLog if no other module loading system is available.
