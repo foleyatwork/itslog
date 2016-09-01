@@ -56,9 +56,9 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	'use strict';
 	
-	var _constants = __webpack_require__(2);
+	var _constants = __webpack_require__(1);
 	
-	var _util = __webpack_require__(3);
+	var _util = __webpack_require__(2);
 	
 	var env = (0, _util.getEnv)();
 	var consolePointer = (0, _util.getConsoleObject)();
@@ -69,43 +69,42 @@ return /******/ (function(modules) { // webpackBootstrap
 	 * @returns {Object} A console wrapper.
 	 */
 	module.exports = function Logger(prefix) {
-		// Use "module.exports" instead of "export default" so people who aren't using
-		// ES6 don't have to use Logger.default. The people who use ES6 will still be
-		// able to do "import Logger from 'logger'".
+	  // Use "module.exports" instead of "export default" so people who aren't using
+	  // ES6 don't have to use Logger.default. The people who use ES6 will still be
+	  // able to do "import Logger from 'logger'".
 	
-		// Attach all simple methods to the wrapper object.
-		_constants.METHODS_SIMPLE.forEach(function (method) {
-			wrapper[method] = function () {
-				var prefixItems = (0, _util.getPrefixes)(env, prefix);
-				var args = (0, _util.convertArgsToArray)(arguments);
-				args = (0, _util.prependItemsToArray)(prefixItems, args);
+	  // Attach all simple methods to the wrapper object.
+	  _constants.METHODS_SIMPLE.forEach(function (method) {
+	    wrapper[method] = function () {
+	      var prefixItems = (0, _util.getPrefixes)(env, prefix);
+	      var args = (0, _util.convertArgsToArray)(arguments);
+	      args = (0, _util.prependItemsToArray)(prefixItems, args);
 	
-				return consolePointer[method].apply(consolePointer, args);
-			};
-		});
+	      return consolePointer[method].apply(consolePointer, args);
+	    };
+	  });
 	
-		// Attach all complex methods to the wrapper object.
-		_constants.METHODS_COMPLEX.forEach(function (method) {
-			wrapper[method] = function () {
-				var args = (0, _util.convertArgsToArray)(arguments);
-				console.log.apply(console, (0, _util.getPrefixes)(env, prefix));
+	  // Attach all complex methods to the wrapper object.
+	  _constants.METHODS_COMPLEX.forEach(function (method) {
+	    wrapper[method] = function () {
+	      var args = (0, _util.convertArgsToArray)(arguments);
+	      console.log.apply(console, (0, _util.getPrefixes)(env, prefix));
 	
-				return consolePointer[method].apply(consolePointer, args);
-			};
-		});
+	      return consolePointer[method].apply(consolePointer, args);
+	    };
+	  });
 	
-		return wrapper;
+	  return wrapper;
 	};
 
 /***/ },
-/* 1 */,
-/* 2 */
+/* 1 */
 /***/ function(module, exports) {
 
 	'use strict';
 	
 	Object.defineProperty(exports, "__esModule", {
-		value: true
+	  value: true
 	});
 	var METHODS_SIMPLE = exports.METHODS_SIMPLE = ['error', 'info', 'log', 'warn'];
 	
@@ -114,31 +113,31 @@ return /******/ (function(modules) { // webpackBootstrap
 	var NAME = exports.NAME = 'logger';
 	
 	var STYLES = exports.STYLES = {
-		BROWSER: 'font-style: italic;font-weight: bold;',
-		NODE: '\u001b[36m%s\u001b[0m'
+	  BROWSER: 'font-style: italic;font-weight: bold;',
+	  NODE: '\u001b[36m%s\u001b[0m'
 	};
 	
 	var ENVS = exports.ENVS = {
-		BROWSER: 'browser',
-		NODE: 'node'
+	  BROWSER: 'browser',
+	  NODE: 'node'
 	};
 	
 	exports.default = {
-		ENVS: ENVS,
-		METHODS_COMPLEX: METHODS_COMPLEX,
-		METHODS_SIMPLE: METHODS_SIMPLE,
-		NAME: NAME,
-		STYLES: STYLES
+	  ENVS: ENVS,
+	  METHODS_COMPLEX: METHODS_COMPLEX,
+	  METHODS_SIMPLE: METHODS_SIMPLE,
+	  NAME: NAME,
+	  STYLES: STYLES
 	};
 
 /***/ },
-/* 3 */
+/* 2 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
 	Object.defineProperty(exports, "__esModule", {
-		value: true
+	  value: true
 	});
 	
 	var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol ? "symbol" : typeof obj; };
@@ -149,51 +148,51 @@ return /******/ (function(modules) { // webpackBootstrap
 	exports.prependItemsToArray = prependItemsToArray;
 	exports.getConsoleObject = getConsoleObject;
 	
-	var _constants = __webpack_require__(2);
+	var _constants = __webpack_require__(1);
 	
 	function noop() {
-		return false;
+	  return false;
 	}
 	
 	function getEnv() {
-		if (typeof window !== 'undefined') {
-			return _constants.ENVS.BROWSER;
-		}
+	  if (typeof window !== 'undefined') {
+	    return _constants.ENVS.BROWSER;
+	  }
 	
-		return _constants.ENVS.NODE;
+	  return _constants.ENVS.NODE;
 	}
 	
 	function getPrefixes(env, prefix) {
-		if (env === _constants.ENVS.BROWSER) {
-			return ['%c[' + prefix + ']: ', _constants.STYLES.BROWSER];
-		}
+	  if (env === _constants.ENVS.BROWSER) {
+	    return ['%c[' + prefix + ']: ', _constants.STYLES.BROWSER];
+	  }
 	
-		return [_constants.STYLES.NODE, '[' + prefix + ']: '];
+	  return [_constants.STYLES.NODE, '[' + prefix + ']: '];
 	}
 	
 	function convertArgsToArray(_args) {
-		var args = Array.prototype.slice.call(_args);
-		return args;
+	  var args = Array.prototype.slice.call(_args);
+	  return args;
 	}
 	
 	function prependItemsToArray(items, arr) {
-		arr.unshift.apply(arr, items);
-		return arr;
+	  arr.unshift.apply(arr, items);
+	  return arr;
 	}
 	
 	function getConsoleObject() {
-		if ((typeof console === 'undefined' ? 'undefined' : _typeof(console)) !== undefined) {
-			return console;
-		}
+	  if ((typeof console === 'undefined' ? 'undefined' : _typeof(console)) !== undefined) {
+	    return console;
+	  }
 	
-		var _console = {};
-		var allMethods = _constants.METHODS_SIMPLE.concat(_constants.METHODS_COMPLEX);
+	  var _console = {};
+	  var allMethods = _constants.METHODS_SIMPLE.concat(_constants.METHODS_COMPLEX);
 	
-		allMethods.forEach(function (method) {
-			_console[method] = noop;
-		});
+	  allMethods.forEach(function (method) {
+	    _console[method] = noop;
+	  });
 	
-		return _console;
+	  return _console;
 	}
 
 /***/ }

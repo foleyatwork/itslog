@@ -1,15 +1,15 @@
 import {
-	METHODS_COMPLEX,
-	METHODS_SIMPLE,
-	NAME,
+  METHODS_COMPLEX,
+  METHODS_SIMPLE,
+  NAME,
 } from './constants';
 
 import {
-	convertArgsToArray,
-	prependItemsToArray,
-	getConsoleObject,
-	getEnv,
-	getPrefixes,
+  convertArgsToArray,
+  prependItemsToArray,
+  getConsoleObject,
+  getEnv,
+  getPrefixes,
 } from './util';
 
 const env = getEnv();
@@ -25,27 +25,27 @@ module.exports = function Logger(prefix) {
 // ES6 don't have to use Logger.default. The people who use ES6 will still be
 // able to do "import Logger from 'logger'".
 
-	// Attach all simple methods to the wrapper object.
-	METHODS_SIMPLE.forEach((method) => {
-		wrapper[method] = function() {
-			const prefixItems = getPrefixes(env, prefix);
-			let args = convertArgsToArray(arguments);
-					args = prependItemsToArray(prefixItems, args);
+  // Attach all simple methods to the wrapper object.
+  METHODS_SIMPLE.forEach((method) => {
+    wrapper[method] = function() {
+      const prefixItems = getPrefixes(env, prefix);
+      let args = convertArgsToArray(arguments);
+          args = prependItemsToArray(prefixItems, args);
 
-			return consolePointer[method].apply(consolePointer, args);
-		}
-	});
+      return consolePointer[method].apply(consolePointer, args);
+    }
+  });
 
-	// Attach all complex methods to the wrapper object.
-	METHODS_COMPLEX.forEach((method) => {
-		wrapper[method] = function() {
-			const args = convertArgsToArray(arguments);
-			console.log.apply(console, getPrefixes(env, prefix));
+  // Attach all complex methods to the wrapper object.
+  METHODS_COMPLEX.forEach((method) => {
+    wrapper[method] = function() {
+      const args = convertArgsToArray(arguments);
+      console.log.apply(console, getPrefixes(env, prefix));
 
-			return consolePointer[method].apply(consolePointer, args);
-		}
-	});
+      return consolePointer[method].apply(consolePointer, args);
+    }
+  });
 
-	return wrapper;
+  return wrapper;
 
 }

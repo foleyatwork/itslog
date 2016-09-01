@@ -1,38 +1,38 @@
 export const METHODS_SIMPLE = [
-	'error',
-	'info',
-	'log',
-	'warn',
+  'error',
+  'info',
+  'log',
+  'warn',
 ];
 
 export const METHODS_COMPLEX = [
-	'assert',
-	'count',
-	'dir',
-	'dirxml',
-	'group',
-	'groupCollapsed',
-	'groupEnd',
-	'table',
-	'trace',
+  'assert',
+  'count',
+  'dir',
+  'dirxml',
+  'group',
+  'groupCollapsed',
+  'groupEnd',
+  'table',
+  'trace',
 ];
 
 export const NAME = 'logger';
 
 export const STYLES = {
-	BROWSER: `font-style: italic;font-weight: bold;`,
-	NODE:    `\x1b[36m%s\x1b[0m`,
+  BROWSER: `font-style: italic;font-weight: bold;`,
+  NODE:    `\x1b[36m%s\x1b[0m`,
 };
 
 export const ENVS = {
-	BROWSER: 'browser',
-	NODE:    'node',
+  BROWSER: 'browser',
+  NODE:    'node',
 };
 
 export default {
-	ENVS,
-	METHODS_COMPLEX,
-	METHODS_SIMPLE,
-	NAME,
-	STYLES,
+  ENVS,
+  METHODS_COMPLEX,
+  METHODS_SIMPLE,
+  NAME,
+  STYLES,
 };
