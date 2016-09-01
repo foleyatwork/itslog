@@ -10,8 +10,8 @@ your logs with a stylish identifying string without changing the
 function signature of your console methods.
 
 Before:
-![before](http://imgur.com/a/gq4Iz)
-![after](http://imgur.com/a/k6ehi)
+![before](http://i.imgur.com/880slig.png)
+![after](http://i.imgur.com/880slig.png)
 
 ## Installation
 
