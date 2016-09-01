@@ -1,0 +1,26 @@
+<!doctype html>
+<html>
+
+<head>
+	<title>Logger tests</title>
+	<script src="../logger.js"></script>
+</head>
+
+<body>
+	<script>
+		const logger = Logger;
+		const console = new logger('browser test');
+
+		console.log('log');
+
+		console.warn('warn');
+
+		console.error('error');
+
+		console.log('multiple', 'items', 'in', 'log');
+
+		console.info('info');
+	</script>
+</body>
+
+</html>
