@@ -24,11 +24,11 @@ your code. You can do that like this:
 
 ES6-Style:
 
-    import ItsLog from 'itslog';
+    import itslog from 'itslog';
 
 CommonJS Style:
 
-    const ItsLog = require('ItsLog');
+    const itslog = require('ItsLog');
 
 For browser people with no build system, this package creates a global
 variable called ItsLog if no other module loading system is available.
@@ -37,7 +37,7 @@ the point. It's a UMD module with a global as a backup.
 
 ## Usage Instructions
 
-    const console = ItsLog('myFancyAssPrefix');
+    const console = itslog('myFancyAssPrefix');
 
     // Simple methods.
     console.count('count');
