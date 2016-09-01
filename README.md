@@ -17,8 +17,6 @@ CD into your project folder and install the package.
 
     npm install itslog --save
 
-Now, in your code, do this:
-
 ## Require the Package
 
 Now that you've installed the package, you've got to require it in
@@ -55,7 +53,7 @@ the point. It's a UMD module with a global as a backup.
     console.group(someVar);
     console.groupCollapsed(someVar);
     console.groupEnd(someVar);
-    console.groupEnd(["let's", "make", "a", "table"]);
+    console.table(["let's", "make", "a", "table"]);
     console.trace(someVar);
 
 Simple methods will prepend your prefix to the arguments. Complex
