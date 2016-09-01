@@ -1,10 +1,10 @@
 # It's Log
 ## It's better than bad, it's good!
 
-I often work in environments with heaps of console spam, making it
-annoying to find my own logs in the haystack. This package lets you
-prefix all your logs with a stylish identifying string without
-changing the function signature of your console methods at all.
+I work in environments with heaps of console spam, making it annoying
+to find my own logs in the haystack. This package lets you prefix all
+your logs with a stylish identifying string without changing the
+function signature of your console methods.
 
 Here's how it works.
 

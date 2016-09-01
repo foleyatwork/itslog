@@ -2,7 +2,7 @@
   "name": "itslog",
   "version": "1.0.1",
   "description": "",
-  "main": "index.js",
+  "main": "itslog.min.js",
   "scripts": {
     "test": "node test",
     "build": "PROD_ENV=1 webpack --config webpack.config.js",
