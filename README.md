@@ -1,5 +1,6 @@
 # It's Log
-## It's better than bad, it's good!
+
+It's better than bad, it's good!
 
 ![log](http://i.imgur.com/ezo7hSR.jpg)
 
