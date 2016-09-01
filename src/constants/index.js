@@ -1,4 +1,5 @@
 export const METHODS_SIMPLE = [
+  'count',
   'error',
   'info',
   'log',
@@ -7,7 +8,6 @@ export const METHODS_SIMPLE = [
 
 export const METHODS_COMPLEX = [
   'assert',
-  'count',
   'dir',
   'dirxml',
   'group',

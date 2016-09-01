@@ -2,25 +2,27 @@
 <html>
 
 <head>
-	<title>Logger tests</title>
-	<script src="../logger.js"></script>
+  <title>Logger tests</title>
+  <script src="../itslog.js"></script>
 </head>
 
 <body>
-	<script>
-		const logger = Logger;
-		const console = new logger('browser test');
+  <pre>Open the console, yo.</pre>
 
-		console.log('log');
+  <script>
+    const itslog = window.itslog;
+    const console = new itslog('browser test');
 
-		console.warn('warn');
+    console.log('log');
 
-		console.error('error');
+    console.warn('warn');
 
-		console.log('multiple', 'items', 'in', 'log');
+    console.error('error');
 
-		console.info('info');
-	</script>
+    console.log('multiple', 'items', 'in', 'log');
+
+    console.info('info');
+  </script>
 </body>
 
 </html>

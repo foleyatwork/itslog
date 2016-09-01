@@ -20,7 +20,7 @@ const wrapper = {};
  * @param   {String} prefix
  * @returns {Object} A console wrapper.
  */
-module.exports = function Logger(prefix) {
+module.exports = function itslog(prefix) {
 // Use "module.exports" instead of "export default" so people who aren't using
 // ES6 don't have to use Logger.default. The people who use ES6 will still be
 // able to do "import Logger from 'logger'".

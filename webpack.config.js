@@ -9,7 +9,7 @@ module.exports = {
   context: __dirname,
   devtool: 'source-map',
   entry: {
-    logger: './src/index.js',
+    itslog: './src/index.js',
   },
   module: {
     loaders: [
@@ -27,7 +27,7 @@ module.exports = {
     path: __dirname,
     filename: isProd ? '[name].min.js' : '[name].js',
     sourceMapFilename: '[name].sourcemap.js',
-    library: 'Logger',
+    library: 'itslog',
     libraryTarget: 'umd',
   },
   plugins: isProd ? [

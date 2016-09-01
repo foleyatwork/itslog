@@ -1,16 +1,15 @@
-const Logger = require('../logger').default;
+const itslog = require('../itslog');
+const console = itslog('test');
 
-const log = Logger('test');
+console.log('Standard log message.');
 
-log.log('Standard log message.');
+console.warn('Warning!');
 
-log.warn('Warning!');
+console.error('Error!');
 
-log.error('Error!');
+console.trace('Trace!');
 
-log.trace('Trace!');
-
-log.dir({
+console.dir({
 	1: '1',
 	2: '2',
 	3: '3',
