@@ -9,7 +9,9 @@ to find my own logs in the haystack. This package lets you prefix all
 your logs with a stylish identifying string without changing the
 function signature of your console methods.
 
-Here's how it works.
+Before:
+![before](http://imgur.com/a/gq4Iz)
+![after](http://imgur.com/a/k6ehi)
 
 ## Installation
 
@@ -37,7 +39,7 @@ the point. It's a UMD module with a global as a backup.
 
 ## Usage Instructions
 
-    const console = itslog('myFancyAssPrefix');
+    const console = itslog('test');
 
     // Simple methods.
     console.count('count');

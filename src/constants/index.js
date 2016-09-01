@@ -14,6 +14,7 @@ export const METHODS_COMPLEX = [
   'groupCollapsed',
   'groupEnd',
   'table',
+	'timeEnd',
   'trace',
 ];
 

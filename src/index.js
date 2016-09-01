@@ -1,6 +1,7 @@
 import {
   METHODS_COMPLEX,
   METHODS_SIMPLE,
+	METHODS_TRANSMIT,
   NAME,
 } from './constants';
 
@@ -40,11 +41,18 @@ module.exports = function itslog(prefix) {
   METHODS_COMPLEX.forEach((method) => {
     wrapper[method] = function() {
       const args = convertArgsToArray(arguments);
-      console.log.apply(console, getPrefixes(env, prefix));
+      consolePointer.log.apply(consolePointer, getPrefixes(env, prefix));
 
       return consolePointer[method].apply(consolePointer, args);
     }
   });
+
+	// Pass down remaining methods to the console object.
+  for (let method in consolePointer) {
+		if (!wrapper[method]) {
+			wrapper[method] = consolePointer[method];
+		}
+	}
 
   return wrapper;
 

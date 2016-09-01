@@ -11,7 +11,7 @@
 
   <script>
     const itslog = window.itslog;
-    const console = new itslog('browser test');
+    const console = new itslog('test');
 
     console.log('log');
 
@@ -22,6 +22,9 @@
     console.log('multiple', 'items', 'in', 'log');
 
     console.info('info');
+
+		console.time('time');
+		console.timeEnd('time');
   </script>
 </body>
 
