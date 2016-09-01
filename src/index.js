@@ -40,10 +40,8 @@ module.exports = function itslog(prefix) {
   // Attach all complex methods to the wrapper object.
   METHODS_COMPLEX.forEach((method) => {
     wrapper[method] = function() {
-      const args = convertArgsToArray(arguments);
       consolePointer.log.apply(consolePointer, getPrefixes(env, prefix));
-
-      return consolePointer[method].apply(consolePointer, args);
+      return consolePointer[method](arguments);
     }
   });
 

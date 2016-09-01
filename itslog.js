@@ -87,10 +87,8 @@ return /******/ (function(modules) { // webpackBootstrap
 	  // Attach all complex methods to the wrapper object.
 	  _constants.METHODS_COMPLEX.forEach(function (method) {
 	    wrapper[method] = function () {
-	      var args = (0, _util.convertArgsToArray)(arguments);
 	      consolePointer.log.apply(consolePointer, (0, _util.getPrefixes)(env, prefix));
-	
-	      return consolePointer[method].apply(consolePointer, args);
+	      return consolePointer[method](arguments);
 	    };
 	  });
 	
