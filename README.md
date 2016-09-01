@@ -10,7 +10,7 @@ your logs with a stylish identifying string without changing the
 function signature of your console methods.
 
 Before:
-![before](http://i.imgur.com/880slig.png)
+![before](http://i.imgur.com/H0QRyq0.png)
 ![after](http://i.imgur.com/880slig.png)
 
 ## Installation
