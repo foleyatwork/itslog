@@ -1,11 +1,10 @@
 # It's Log
 ## It's better than bad, it's good!
 
-This is a logger I made for use on my own projects. I often work in
-environments with heaps of console spam, making it annoying to find
-my own logs in the haystack. This package lets you prefix all your
-logs with a stylish identifying string without changing the function
-signature of your console methods at all.
+I often work in environments with heaps of console spam, making it
+annoying to find my own logs in the haystack. This package lets you
+prefix all your logs with a stylish identifying string without
+changing the function signature of your console methods at all.
 
 Here's how it works.
 
